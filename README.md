@@ -1,3 +1,5 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 # Abra
 A small utility to create HTML elements in JavaScript without a bunch of template strings. Don't call it a framework.
 
