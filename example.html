@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Abra example</title>
+  <style media="screen">
+    body {
+      margin: 0 auto;
+      max-width: 50em;
+      text-align: center;
+      background: #f5f7f9;
+      color: #566b78;
+    }
+
+    body {
+      font-family: "Helvetica", "Arial", sans-serif;
+    }
+
+    body {
+      line-height: 1.5;
+      padding: 4em 1em;
+    }
+
+    h2 {
+      color: #333;
+      margin-top: 1em;
+      padding-top: 1em;
+    }
+
+  </style>
+</head>
+
+<body>
+  <h1>This title is not dynamic</h1>
+
+  <script src="abra.js"></script>
+  <script>
+    const paragraph = abra.p({
+      id: 'kadabra',
+      className: 'alakazam',
+      style: {
+        color: 'cornflowerblue'
+      }
+    }, 'This paragraph was dynamically created by abra')
+
+    const onclick = () => alert("Hell yea it does");
+    const isItWorkingButton = abra.button({
+      onclick
+    }, "Does it handle function binding?")
+
+    document.body.append(paragraph)
+    document.body.append(isItWorkingButton)
+
+  </script>
+</body>
+
+</html>
