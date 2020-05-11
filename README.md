@@ -4,7 +4,7 @@
 A small utility to create HTML elements in JavaScript without a bunch of template strings. Don't call it a framework.
 
 ## How To
-Copy the contents of the Abra.js file and plop them either straight into your HTML or include it with a script tag:
+Copy the contents of the abra.js file and plop them either straight into your HTML or include it with a script tag:
 ```html
 <script src="abra.js"></script>
 ```
