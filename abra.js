@@ -15,19 +15,20 @@ window.abra = function() {
     'tfoot', 'th', 'thead', 'time', 'title', 'tr', 'track', 'tt', 'u', 'ul', 'var', 'video', 'wbr',
   ];
 
-  function element(type, attrs, ...children) {
-    const el = document.createElement(type);
-
+  function attach(obj, attrs) {
     for (const attr in attrs) {
       if (typeof attrs[attr] !== 'object') {
-        el[attr] = attrs[attr];
+        obj[attr] = attrs[attr];
       } else {
-        for (const subattr in attrs[attr]) {
-          el[attr][subattr] = attrs[attr][subattr];
-        }
+        attach(obj[attr], attrs[attr]);
       }
     }
+  }
 
+
+  function element(type, attrs, ...children) {
+    const el = document.createElement(type);
+    attach(el, attrs);
     el.appendChild(children.reduce((frag, child) => {
       if (typeof child === 'string') {
         child = document.createTextNode(child);
