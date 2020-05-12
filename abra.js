@@ -30,7 +30,7 @@ window.abra = function() {
     const el = document.createElement(type);
     attach(el, attrs);
     el.appendChild(children.reduce((frag, child) => {
-      if (typeof child === 'string') {
+      if (!(child instanceof Node)) {
         child = document.createTextNode(child);
       }
       frag.appendChild(child);
